@@ -12,30 +12,37 @@ Bonus:
 Applicare dei controlli sull'input dell'utente */
 
 //Dati a disposizione
-const scontoPerMenori = 20;
-const scontoPerOver = 40;
-const prezzoPerKm = 0.21;
+const scontoPerMenori = 20; // questa variabile PUò essere MODIFICATA
+const scontoPerOver = 40; // questa variabile RIMMARRA SEMPRE COSI
+const prezzoPerKm = 0.21; // decimal
 
 // Altri < 65 - 18 = nessuno sconto
 
-
 //Dati da raccogliere
-const kmViaggioInput = prompt("Quanti chilometri vuoi percorrere?");
-const kmViaggio = parseInt(kmViaggioInput);
-console.log(kmViaggio)
+const kmViaggioInput = prompt("Quanti chilometri vuoi percorrere?"); // string
+const kmViaggio = parseInt(kmViaggioInput); // number
+
+console.log(kmViaggio);
 
 const etaInput = prompt("Quanti anni hai?");
 const eta = parseInt(etaInput);
-console.log(eta)
+console.log(eta);
 
 //Esecuzione logica
 
 /*Calcolare il prezzo base */
-let prezzoBase = km * prezzoPerKm;
-let prezzoFinale;
+let prezzoBase = kmViaggio * prezzoPerKm; // decimal
+let prezzoFinale = 0.0; // decimal
 
 /* Applicare gli sconti */
 
-
+if (eta < 18) {
+    prezzoFinale = prezzoBase * 0.8;  // sconto 20% decimal
+} else if (eta > 65) {
+    prezzoFinale = prezzoBase * 0.6; // sconto 40% decimal
+} else {
+    prezzoFinale = prezzoBase; // nessuno sconto decimal
+}
 
 //Stampa del risultato
+console.log(`Il prezzo del tuo biglietto è € ${prezzoFinale.toFixed(2)}`);
