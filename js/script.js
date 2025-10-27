@@ -12,7 +12,7 @@ Bonus:
 Applicare dei controlli sull'input dell'utente */
 
 //Dati a disposizione
-const scontoPerMenori = 20; // questa variabile PUò essere MODIFICATA
+const scontoPerMenori = 20; // questa variabile RIMMARRA SEMPRE COSI
 const scontoPerOver = 40; // questa variabile RIMMARRA SEMPRE COSI
 const prezzoPerKm = 0.21; // decimal
 
@@ -37,9 +37,9 @@ let prezzoFinale;// decimal
 /* Applicare gli sconti */
 
 if (eta < 18) {
-    prezzoFinale = prezzoBase * 0.8;  // sconto 20% decimal
+    prezzoFinale = prezzoBase - (prezzoBase * scontoPerMenori / 100);  // sconto 20% decimal
 } else if (eta > 65) {
-    prezzoFinale = prezzoBase * 0.6; // sconto 40% decimal
+    prezzoFinale = prezzoBase - (prezzoBase * scontoPerOver / 100); // sconto 40% decimal
 } else {
     prezzoFinale = prezzoBase; // nessuno sconto decimal
 }
