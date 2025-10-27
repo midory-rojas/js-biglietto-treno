@@ -24,15 +24,15 @@ const kmViaggio = parseInt(kmViaggioInput); // number
 
 console.log(kmViaggio);
 
-const etaInput = prompt("Quanti anni hai?");
-const eta = parseInt(etaInput);
+const etaInput = prompt("Quanti anni hai?"); // string
+const eta = parseInt(etaInput); // number
 console.log(eta);
 
 //Esecuzione logica
 
 /*Calcolare il prezzo base */
 let prezzoBase = kmViaggio * prezzoPerKm; // decimal
-let prezzoFinale = 0.0; // decimal
+let prezzoFinale;// decimal
 
 /* Applicare gli sconti */
 
